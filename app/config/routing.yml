@@ -1,0 +1,7 @@
+page_sale:
+    resource: "@PageSaleBundle/Controller/"
+    type:     annotation
+    prefix:   /
+sale_vu:
+    resource: "@PageSaleBundle/Resources/config/routing.yml"
+    prefix:   /
