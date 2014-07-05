@@ -140,6 +140,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'page_sale_default_index')), array (  '_controller' => 'Page\\SaleBundle\\Controller\\DefaultController::indexAction',));
         }
 
+        // _selection
+        if ($pathinfo === '/aaa') {
+            return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\WelcomeController::indexAction',  '_route' => '_selection',);
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

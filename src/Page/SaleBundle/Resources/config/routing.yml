@@ -1,0 +1,3 @@
+_selection:
+    pattern:  /aaa
+    defaults: { _controller: AcmeDemoBundle:Welcome:index }
