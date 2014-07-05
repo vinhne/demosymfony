@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Admin!{% endblock %}</title>
+        {% block stylesheets %}
+			<link media="all" href="http://{{ app.request.getHost() }}/assets/css/style.css" type="text/css" rel="stylesheet" />
+		{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+		
+		
+		{% block javascripts %}
+			 <script type="text/javascript" src="http://{{ app.request.getHost() }}/assets/js/jquery-1.4.4.min.js"></script>
+			<script type="text/javascript" src="{{ asset('bundles/pagesale/ckeditor/ckeditor.js') }}"></script>
+		{% endblock %}
+		
+    </head>
+    <body>
+	<div class="page">
+		<div class="header">
+			
+		</div>
+		<div class="menu">
+			{% include'PageSaleBundle:Components:menu.twig.html'%}
+		</div>
+		<div class="content">
+			{% block body %}
+			
+			{% endblock %}
+		</div>
+		
+		<div class="footer">
+			
+		</div>
+	</div>
+	
+        
+        
+    </body>
+</html>

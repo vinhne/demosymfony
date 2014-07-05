@@ -135,14 +135,32 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // page_sale_admin_index
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'page_sale_admin_index');
+            }
+
+            return array (  '_controller' => 'Page\\SaleBundle\\Controller\\AdminController::indexAction',  '_route' => 'page_sale_admin_index',);
+        }
+
         // page_sale_default_index
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'page_sale_default_index')), array (  '_controller' => 'Page\\SaleBundle\\Controller\\DefaultController::indexAction',));
         }
 
         // _selection
-        if ($pathinfo === '/aaa') {
-            return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\WelcomeController::indexAction',  '_route' => '_selection',);
+        if ($pathinfo === '/admin') {
+            return array (  '_controller' => 'Page\\SaleBundle\\Controller\\AdminController::indexAction',  '_route' => '_selection',);
+        }
+
+        // _ckediter
+        if (rtrim($pathinfo, '/') === '/bundles/pagesale/ckfinder/ckfinder') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', '_ckediter');
+            }
+
+            return array('_route' => '_ckediter');
         }
 
         // _welcome

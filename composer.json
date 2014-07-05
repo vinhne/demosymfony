@@ -19,7 +19,8 @@
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
 		"symfony/dom-crawler": "dev-master",
-		"elendev/image-bundle": "dev-master"
+		"elendev/image-bundle": "dev-master",
+		"jonlil/ckfinder-bundle": "dev-master"
 		
     },
     "require-dev": {

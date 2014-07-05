@@ -19,6 +19,8 @@ return array(
     'Sensio\\Bundle\\FrameworkExtraBundle' => array($vendorDir . '/sensio/framework-extra-bundle'),
     'Sensio\\Bundle\\DistributionBundle' => array($vendorDir . '/sensio/distribution-bundle'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
+    'Jonlil\\CKFinderBundle' => array($vendorDir . '/jonlil/ckfinder-bundle'),
+    'Ivory\\CKEditorBundle' => array($vendorDir . '/egeloen/ckeditor-bundle'),
     'Incenteev\\ParameterHandler' => array($vendorDir . '/incenteev/composer-parameter-handler'),
     'Elendev\\ImageBundle' => array($vendorDir . '/elendev/image-bundle'),
     'Doctrine\\ORM\\' => array($vendorDir . '/doctrine/orm/lib'),

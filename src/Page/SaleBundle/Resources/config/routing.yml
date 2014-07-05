@@ -1,3 +1,6 @@
 _selection:
-    pattern:  /aaa
-    defaults: { _controller: AcmeDemoBundle:Welcome:index }
+    pattern:  /admin
+    defaults: { _controller: PageSaleBundle:Admin:index }
+_ckediter:
+    pattern:  /bundles/pagesale/ckfinder/ckfinder/
+    #defaults: { _controller: AcmeFrancketFilsBundle:Admin:rendezvousdelete }

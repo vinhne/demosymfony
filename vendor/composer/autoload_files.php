@@ -10,4 +10,5 @@ return array(
     $vendorDir . '/kriswallsmith/assetic/src/functions.php',
     $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
     $vendorDir . '/mango-group/symfony/src/Symfony/Component/Intl/Resources/stubs/functions.php',
+    $vendorDir . '/jonlil/ckfinder/core/ckfinder_php5.php',
 );
