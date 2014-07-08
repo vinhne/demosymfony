@@ -35,12 +35,39 @@ class __TwigTemplate_a8a416c71a486740381b4335607709bcb8f1be5a70b33292595b461dcc0
     public function block_body($context, array $blocks = array())
     {
         // line 5
-        echo "\t
-\t";
+        echo "\t<script>
+\t\t";
         // line 6
+        if ((isset($context["Message"]) ? $context["Message"] : $this->getContext($context, "Message"))) {
+            // line 7
+            echo "\t\t\t\$( document ).ready(function() {
+\t\t\t\t";
+            // line 8
+            if (($this->getAttribute((isset($context["Message"]) ? $context["Message"] : $this->getContext($context, "Message")), "type", array(), "array") == 1)) {
+                // line 9
+                echo "\t\t\t\t\tThanhCong(\"Thêm danh mục thành công!\");
+\t\t\t\t";
+            } elseif (($this->getAttribute((isset($context["Message"]) ? $context["Message"] : $this->getContext($context, "Message")), "type", array(), "array") == 0)) {
+                // line 11
+                echo "\t\t\t\t\tThatBai(\"Thêm không thành công!\");\t\t\t\t
+\t\t\t\t";
+            }
+            // line 13
+            echo "\t\t\t});
+\t\t";
+        }
+        // line 15
+        echo "\t</script>
+<a href=\"";
+        // line 16
+        echo $this->env->getExtension('routing')->getPath("_categogy");
+        echo "\">Danh sách danh mục</a>
+\t<div class=\"frm_categogy\" >
+\t\t";
+        // line 18
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
         echo "
- 
+\t</div>
  ";
     }
 
@@ -56,6 +83,6 @@ class __TwigTemplate_a8a416c71a486740381b4335607709bcb8f1be5a70b33292595b461dcc0
 
     public function getDebugInfo()
     {
-        return array (  41 => 6,  38 => 5,  35 => 4,  29 => 2,);
+        return array (  68 => 18,  63 => 16,  60 => 15,  56 => 13,  52 => 11,  48 => 9,  46 => 8,  43 => 7,  41 => 6,  38 => 5,  35 => 4,  29 => 2,);
     }
 }

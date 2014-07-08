@@ -2,7 +2,19 @@
 {% block title %}Trang chủ quản lý!{% endblock %}
 
  {% block body %}
-	
-	{{ form(form) }}
- 
+	<script>
+		{% if Message %}
+			$( document ).ready(function() {
+				{% if Message['type'] == 1 %}
+					ThanhCong("Thêm danh mục thành công!");
+				{% elseif Message['type'] == 0 %}
+					ThatBai("Thêm không thành công!");				
+				{% endif %}
+			});
+		{% endif %}
+	</script>
+<a href="{{ path('_categogy') }}">Danh sách danh mục</a>
+	<div class="frm_categogy" >
+		{{ form(form) }}
+	</div>
  {% endblock %}

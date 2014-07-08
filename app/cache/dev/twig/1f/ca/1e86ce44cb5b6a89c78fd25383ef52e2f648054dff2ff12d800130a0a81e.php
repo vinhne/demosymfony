@@ -93,6 +93,12 @@ class __TwigTemplate_1fca1e86ce44cb5b6a89c78fd25383ef52e2f648054dff2ff12d800130a
         // line 53
         echo "\t\t</div>
 \t</div>
+\t<div class=\"loading\">
+\t\t<img src=\"http://";
+        // line 56
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request"), "getHost", array(), "method"), "html", null, true);
+        echo "/assets/images/loading.gif\" />
+\t</div>
 \t
         
         
@@ -167,6 +173,6 @@ class __TwigTemplate_1fca1e86ce44cb5b6a89c78fd25383ef52e2f648054dff2ff12d800130a
 
     public function getDebugInfo()
     {
-        return array (  154 => 47,  151 => 46,  145 => 24,  141 => 23,  137 => 22,  132 => 21,  129 => 20,  123 => 9,  119 => 8,  114 => 7,  111 => 6,  105 => 5,  94 => 53,  92 => 52,  87 => 49,  85 => 46,  81 => 44,  79 => 43,  74 => 40,  69 => 38,  63 => 36,  61 => 35,  50 => 26,  48 => 20,  35 => 11,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  160 => 47,  157 => 46,  151 => 24,  147 => 23,  143 => 22,  138 => 21,  135 => 20,  129 => 9,  125 => 8,  120 => 7,  117 => 6,  111 => 5,  99 => 56,  94 => 53,  92 => 52,  87 => 49,  85 => 46,  81 => 44,  79 => 43,  74 => 40,  69 => 38,  63 => 36,  61 => 35,  50 => 26,  48 => 20,  33 => 6,  23 => 1,  86 => 51,  38 => 5,  35 => 11,  29 => 5,);
     }
 }

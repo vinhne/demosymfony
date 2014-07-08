@@ -44,6 +44,7 @@ class __TwigTemplate_00fb5bfb6d679e79bb02485de6f77a4050222727c66f0b22d9cb87eb974
 \t\t\t\t
 \t\t\tfunction listcategogy(page)
 \t\t\t{
+\t\t\t\t\$(\".loading\").show();
 \t\t\t\tvar URL = 'categogy/listcategogy';
 \t\t\t\t \$.ajax({
 \t\t\t\t type: \"post\",
@@ -52,6 +53,7 @@ class __TwigTemplate_00fb5bfb6d679e79bb02485de6f77a4050222727c66f0b22d9cb87eb974
 \t\t\t\t dataType : \"html\",
 \t\t\t\t success : function(data){\t\t\t 
 \t\t\t\t\t\t\$(\".content_categogy\").html(data);
+\t\t\t\t\t\t\$(\".loading\").hide();
 \t\t\t\t\t}\t\t\t 
 \t\t\t\t });
 \t\t\t}
@@ -81,7 +83,7 @@ class __TwigTemplate_00fb5bfb6d679e79bb02485de6f77a4050222727c66f0b22d9cb87eb974
 \t\t               
 \t\t
 \t<a href=\"";
-        // line 50
+        // line 52
         echo $this->env->getExtension('routing')->getPath("_categogy_add");
         echo "\">Thêm mới</a>
 \t<div class=\"content_categogy\" >
@@ -102,6 +104,6 @@ class __TwigTemplate_00fb5bfb6d679e79bb02485de6f77a4050222727c66f0b22d9cb87eb974
 
     public function getDebugInfo()
     {
-        return array (  85 => 50,  38 => 5,  35 => 4,  29 => 2,);
+        return array (  87 => 52,  38 => 5,  35 => 4,  29 => 2,);
     }
 }

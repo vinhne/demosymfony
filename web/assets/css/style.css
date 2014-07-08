@@ -128,3 +128,38 @@ tr {
     background: none repeat scroll 0 0 #ccc;
     line-height: 23px;
 }
+
+.frm_categogy {
+    width: 473px;
+}
+.frm_categogy input {
+    height: 21px;
+    left: 149px;
+    position: absolute;
+    top: 8px;
+    width: 246px;
+}
+#form > div {
+    position: relative;
+}
+input {
+    border: 1px solid #ccc;
+}
+select {
+    border: 1px solid #ccc;
+}
+.frm_categogy select {
+    height: 25px;
+    left: 148px;
+    position: absolute;
+    top: 4px;
+}
+
+.loading {
+    display: none;
+    height: 500px;
+    position: fixed;
+    right: 0;
+    top: 39px;
+    width: 84%;
+}

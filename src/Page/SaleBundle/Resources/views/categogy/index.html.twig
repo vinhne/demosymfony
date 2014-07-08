@@ -11,6 +11,7 @@
 				
 			function listcategogy(page)
 			{
+				$(".loading").show();
 				var URL = 'categogy/listcategogy';
 				 $.ajax({
 				 type: "post",
@@ -19,6 +20,7 @@
 				 dataType : "html",
 				 success : function(data){			 
 						$(".content_categogy").html(data);
+						$(".loading").hide();
 					}			 
 				 });
 			}

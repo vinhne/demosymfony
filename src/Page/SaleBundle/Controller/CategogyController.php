@@ -53,6 +53,7 @@ class CategogyController extends Controller
 	public function addAction()
 	{
 		
+		$Message = null;
 		
 		$categogy = new Categogy();
 		
@@ -71,7 +72,8 @@ class CategogyController extends Controller
 				
 				$em = $this->getDoctrine()->getManager();
 				$em->persist($categogy);
-				$em->flush();			
+				$em->flush();	
+				$Message['type'] = 1;
 			}
 			
 			
@@ -109,7 +111,8 @@ class CategogyController extends Controller
 			
        return $this->render('PageSaleBundle:Categogy:add.html.twig', array(
 			'form' => $form->createView(),
-			'Admin'=> $this->sercurity()
+			'Admin'=> $this->sercurity(),
+			'Message'=>$Message
         ));	
 
     }
