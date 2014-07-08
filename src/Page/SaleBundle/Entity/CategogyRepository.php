@@ -12,4 +12,34 @@ use Doctrine\ORM\EntityRepository;
  */
 class CategogyRepository extends EntityRepository
 {
+	 public function retrieve_all($name='',$page,$count,$kt = true )
+	 {
+      //  $query = $this->getEntityManager()->createQuery("SELECT nl FROM PageSaleBundle:Categogy AS nl ORDER BY nl.id DESC");
+       // return $query->getResult();
+	   
+	   $sql = "SELECT nl FROM PageSaleBundle:Categogy AS nl where (1 != 2)";
+	 
+		if($name!='')
+			$sql .=" and nl.name like '".$name."'";
+	   
+	   if($kt)
+			return $this->getEntityManager()
+			->createQuery($sql)
+			->setMaxResults($count)
+			->setFirstResult($page*$count)
+			->getResult();
+		else
+			return $this->getEntityManager()
+			->createQuery($sql)
+			->getResult();
+		
+		
+    }
+    public function delete($id){
+        $query = $this->getEntityManager()
+                    ->createQuery(
+                        'DELETE FROM PageSaleBundle:Categogy AS nl WHERE nl.id = :id'
+                    )->setParameter('id', $id);
+        return $query->getScalarResult();
+    }
 }

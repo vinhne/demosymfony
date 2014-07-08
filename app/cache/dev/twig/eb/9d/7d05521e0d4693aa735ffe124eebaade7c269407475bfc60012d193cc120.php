@@ -16,7 +16,15 @@ class __TwigTemplate_eb9d7d05521e0d4693aa735ffe124eebaade7c269407475bfc60012d193
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "menu";
+        echo "<ul>
+\t<li> <i class=\"fa fa-list-ul\"></i><a href=\"";
+        // line 2
+        echo $this->env->getExtension('routing')->getPath("_categogy");
+        echo "\">Danh mục</a></li>
+\t<li><i class=\"fa fa-archive\"></i><a href=\"\">Sản phẩm</a></li>
+\t<li><i class=\"fa fa-book\"></i><a href=\"\">Tin tức</a></li>
+\t<li><i class=\"fa fa-hdd-o\"></i><a href=\"\">Slideshow & Hình ảnh </a></li>
+</ul>";
     }
 
     public function getTemplateName()
@@ -24,8 +32,13 @@ class __TwigTemplate_eb9d7d05521e0d4693aa735ffe124eebaade7c269407475bfc60012d193
         return "PageSaleBundle:Components:menu.twig.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  19 => 1,  110 => 28,  107 => 27,  101 => 14,  96 => 13,  93 => 12,  86 => 7,  83 => 6,  77 => 5,  62 => 30,  60 => 27,  56 => 25,  54 => 24,  44 => 16,  42 => 12,  33 => 6,  23 => 1,  38 => 5,  35 => 9,  29 => 5,);
+        return array (  22 => 2,  19 => 1,);
     }
 }

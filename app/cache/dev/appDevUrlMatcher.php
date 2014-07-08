@@ -144,23 +144,67 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Page\\SaleBundle\\Controller\\AdminController::indexAction',  '_route' => 'page_sale_admin_index',);
         }
 
+        // page_sale_categogy_sercurity
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'page_sale_categogy_sercurity');
+            }
+
+            return array (  '_controller' => 'Page\\SaleBundle\\Controller\\CategogyController::sercurity',  '_route' => 'page_sale_categogy_sercurity',);
+        }
+
         // page_sale_default_index
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'page_sale_default_index')), array (  '_controller' => 'Page\\SaleBundle\\Controller\\DefaultController::indexAction',));
         }
 
-        // _selection
-        if ($pathinfo === '/admin') {
-            return array (  '_controller' => 'Page\\SaleBundle\\Controller\\AdminController::indexAction',  '_route' => '_selection',);
-        }
-
-        // _ckediter
-        if (rtrim($pathinfo, '/') === '/bundles/pagesale/ckfinder/ckfinder') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', '_ckediter');
+        if (0 === strpos($pathinfo, '/admin')) {
+            // _admin
+            if ($pathinfo === '/admin') {
+                return array (  '_controller' => 'Page\\SaleBundle\\Controller\\AdminController::indexAction',  '_route' => '_admin',);
             }
 
-            return array('_route' => '_ckediter');
+            if (0 === strpos($pathinfo, '/admin/log')) {
+                // _admin_login
+                if ($pathinfo === '/admin/login') {
+                    return array (  '_controller' => 'Page\\SaleBundle\\Controller\\AdminController::loginAction',  '_route' => '_admin_login',);
+                }
+
+                // _admin_logout
+                if ($pathinfo === '/admin/logout') {
+                    return array (  '_controller' => 'Page\\SaleBundle\\Controller\\AdminController::logoutAction',  '_route' => '_admin_logout',);
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/categogy')) {
+            // _categogy
+            if ($pathinfo === '/categogy') {
+                return array (  '_controller' => 'Page\\SaleBundle\\Controller\\CategogyController::indexAction',  '_route' => '_categogy',);
+            }
+
+            // _categogy_add
+            if ($pathinfo === '/categogy/add') {
+                return array (  '_controller' => 'Page\\SaleBundle\\Controller\\CategogyController::addAction',  '_route' => '_categogy_add',);
+            }
+
+            // _categogy_list
+            if ($pathinfo === '/categogy/listcategogy') {
+                return array (  '_controller' => 'Page\\SaleBundle\\Controller\\CategogyController::listcategogyAction',  '_route' => '_categogy_list',);
+            }
+
+            // _categogy_delete
+            if ($pathinfo === '/categogy/delete') {
+                return array (  '_controller' => 'Page\\SaleBundle\\Controller\\CategogyController::deleteAction',  '_route' => '_categogy_delete',);
+            }
+
+            // _categogy_edit
+            if (0 === strpos($pathinfo, '/categogy/edit') && preg_match('#^/categogy/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => '_categogy_edit')), array (  '_controller' => 'Page\\SaleBundle\\Controller\\CategogyController::editAction',));
+            }
+
         }
 
         // _welcome

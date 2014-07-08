@@ -1,0 +1,54 @@
+{% extends 'PageSaleBundle::layoutadmin.html.twig' %}
+{% block title %}Trang chủ quản lý!{% endblock %}
+
+ {% block body %}
+	
+	
+		<script>
+			$( document ).ready(function() {
+				listcategogy(0);  
+				});
+				
+			function listcategogy(page)
+			{
+				var URL = 'categogy/listcategogy';
+				 $.ajax({
+				 type: "post",
+				 url : URL,  
+				 data:{'page':page,'name':''},
+				 dataType : "html",
+				 success : function(data){			 
+						$(".content_categogy").html(data);
+					}			 
+				 });
+			}
+			
+			function deletecategogy(id)
+			{
+				var URL = 'categogy/delete';
+				 $.ajax({
+				 type: "post",
+				 url : URL,  
+				 data:{'id':id},
+				 dataType : "html",
+				 success : function(data){			 
+						$(".row"+id).hide();
+						
+						ThanhCong("Xóa danh mục thành công!");  
+					}			 
+				 });
+			}
+			
+			                               
+                    
+			
+		</script>
+		
+		
+		               
+		
+	<a href="{{ path('_categogy_add') }}">Thêm mới</a>
+	<div class="content_categogy" >
+	
+	</div>
+ {% endblock %}

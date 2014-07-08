@@ -1,0 +1,98 @@
+
+#info_message {
+    bottom: 0;
+    display: none;
+    height: 51px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    width: 37%;
+    z-index: 50000;
+}
+.center_auto {
+    margin: 0 auto;
+    padding: 15px 25px;
+    width: 146%;
+}
+#info_message .message_area {
+    float: left;
+    width: 57%;
+}
+#info_message .message_area span.link_ribbon {
+    color: #999999;
+    cursor: pointer;
+    text-decoration: underline;
+}
+#info_message .button_area {
+    float: left;
+    height: 10px;
+    margin-top: 3px;
+    width: 11px;
+}
+.error_bg {
+    background: url("../images/error_bg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+}
+.error_bg .message_area {
+    color: #a20510;
+    font: bold 14px arial;
+    text-shadow: 0 1px 0 #fff;
+}
+.error_bg .button_area {
+    background: url("../images/error_close.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+.error_bg .info_more_descrption {
+    box-shadow: 0 0 5px #b2495b;
+}
+.succ_bg {
+    background: url("../images/succ_bg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+}
+.succ_bg .message_area {
+    color: #2f7c00;
+    font: bold 14px arial;
+    text-shadow: 0 1px 0 #fff;
+}
+.succ_bg .button_area {
+    background: url("../images/succ_close.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+.info_bg {
+    background: url("../images/info_bg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+}
+.info_bg .message_area {
+    color: #0d9a95;
+    font: bold 14px arial;
+    text-shadow: 0 1px 0 #fff;
+}
+.info_bg .button_area {
+    background: url("../images/info_close.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+.warn_bg {
+    background: url("../images/warn_bg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+}
+.warn_bg .message_area {
+    color: #a39709;
+    font: bold 14px arial;
+    text-shadow: 0 1px 0 #fff;
+}
+.warn_bg .button_area {
+    background: url("../images/warn_close.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+.clearboth {
+    clear: both;
+}
+.info_more_descrption {
+    background: none repeat scroll 0 0 #fbfbfb;
+    display: none;
+    height: 300px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 10px;
+    width: 950px;
+}
+.succ_bg .info_more_descrption {
+    box-shadow: 0 0 5px #56a25e;
+}

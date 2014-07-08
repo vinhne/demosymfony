@@ -1,7 +1,7 @@
 <?php
 
 namespace Page\SaleBundle\Entity;
-
+use Symfony\Component\HttpFoundation\Session\Session;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -12,4 +12,26 @@ use Doctrine\ORM\EntityRepository;
  */
 class UsersRepository extends EntityRepository
 {
+	public function is_user($username, $password )
+	 {
+        $query = $this->getEntityManager()->createQuery("SELECT us FROM PageSaleBundle:Users as us where us.username = :username and us.password = :password")->setParameters(array('username' => $username, 'password' => md5($password)));;
+        return $query->getOneOrNullResult();
+	 }
+	 
+	  public function setAuthenticate($userData){
+		
+        $Session = new Session();
+		$Session->start();
+        $Session->set('Admin', $userData);
+    }
+    public function checkAuthenticate(){
+        $Session = new Session();
+		//print_r($Session->get('Admin'));
+        return $Session->get('Admin');
+    }
+   
+    public function clearAuthenticate(){
+        $Session = new Session();
+        $Session->remove('Admin');
+    }
 }

@@ -5,20 +5,39 @@
         <title>{% block title %}Admin!{% endblock %}</title>
         {% block stylesheets %}
 			<link media="all" href="http://{{ app.request.getHost() }}/assets/css/style.css" type="text/css" rel="stylesheet" />
+			<link media="all" href="http://{{ app.request.getHost() }}/assets/font/css/font-awesome.css" type="text/css" rel="stylesheet" />
+			 <link href="http://{{ app.request.getHost() }}/assets/css/jquery_notification.css" type="text/css" rel="stylesheet"/>
 		{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 		
 		
+		
+		
+		
+
+       
+		
 		{% block javascripts %}
 			 <script type="text/javascript" src="http://{{ app.request.getHost() }}/assets/js/jquery-1.4.4.min.js"></script>
 			<script type="text/javascript" src="{{ asset('bundles/pagesale/ckeditor/ckeditor.js') }}"></script>
+			<script type="text/javascript" src="http://{{ app.request.getHost() }}/assets/js/common.js"></script>
+			<script type="text/javascript" src="http://{{ app.request.getHost() }}/assets/js/jquery_notification_v.1.js"></script>
 		{% endblock %}
 		
     </head>
     <body>
 	<div class="page">
 		<div class="header">
-			
+			<div class="administrator">
+				ADMINISTRATOR
+			</div>
+			<div class="infor-login">
+				{% if Admin %}
+				Xin chào:	{{Admin.username()}} 
+				
+				<a href="{{ path('_admin_logout') }}">Thoát</a>
+				{% endif %}
+			</div>
 		</div>
 		<div class="menu">
 			{% include'PageSaleBundle:Components:menu.twig.html'%}
@@ -30,7 +49,7 @@
 		</div>
 		
 		<div class="footer">
-			
+			{% include'PageSaleBundle:Components:footer.twig.html'%}
 		</div>
 	</div>
 	

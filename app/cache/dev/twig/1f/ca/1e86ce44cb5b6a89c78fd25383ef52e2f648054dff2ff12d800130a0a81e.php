@@ -31,39 +31,67 @@ class __TwigTemplate_1fca1e86ce44cb5b6a89c78fd25383ef52e2f648054dff2ff12d800130a
         ";
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 9
+        // line 11
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
 \t\t
 \t\t
+\t\t
+\t\t
+\t\t
+
+       
+\t\t
 \t\t";
-        // line 12
+        // line 20
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 16
+        // line 26
         echo "\t\t
     </head>
     <body>
 \t<div class=\"page\">
 \t\t<div class=\"header\">
-\t\t\t
+\t\t\t<div class=\"administrator\">
+\t\t\t\tADMINISTRATOR
+\t\t\t</div>
+\t\t\t<div class=\"infor-login\">
+\t\t\t\t";
+        // line 35
+        if ((isset($context["Admin"]) ? $context["Admin"] : $this->getContext($context, "Admin"))) {
+            // line 36
+            echo "\t\t\t\tXin chào:\t";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["Admin"]) ? $context["Admin"] : $this->getContext($context, "Admin")), "username", array(), "method"), "html", null, true);
+            echo " 
+\t\t\t\t
+\t\t\t\t<a href=\"";
+            // line 38
+            echo $this->env->getExtension('routing')->getPath("_admin_logout");
+            echo "\">Thoát</a>
+\t\t\t\t";
+        }
+        // line 40
+        echo "\t\t\t</div>
 \t\t</div>
 \t\t<div class=\"menu\">
 \t\t\t";
-        // line 24
+        // line 43
         $this->env->loadTemplate("PageSaleBundle:Components:menu.twig.html")->display($context);
-        // line 25
+        // line 44
         echo "\t\t</div>
 \t\t<div class=\"content\">
 \t\t\t";
-        // line 27
+        // line 46
         $this->displayBlock('body', $context, $blocks);
-        // line 30
+        // line 49
         echo "\t\t</div>
 \t\t
 \t\t<div class=\"footer\">
-\t\t\t
-\t\t</div>
+\t\t\t";
+        // line 52
+        $this->env->loadTemplate("PageSaleBundle:Components:footer.twig.html")->display($context);
+        // line 53
+        echo "\t\t</div>
 \t</div>
 \t
         
@@ -86,27 +114,43 @@ class __TwigTemplate_1fca1e86ce44cb5b6a89c78fd25383ef52e2f648054dff2ff12d800130a
         echo "\t\t\t<link media=\"all\" href=\"http://";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request"), "getHost", array(), "method"), "html", null, true);
         echo "/assets/css/style.css\" type=\"text/css\" rel=\"stylesheet\" />
+\t\t\t<link media=\"all\" href=\"http://";
+        // line 8
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request"), "getHost", array(), "method"), "html", null, true);
+        echo "/assets/font/css/font-awesome.css\" type=\"text/css\" rel=\"stylesheet\" />
+\t\t\t <link href=\"http://";
+        // line 9
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request"), "getHost", array(), "method"), "html", null, true);
+        echo "/assets/css/jquery_notification.css\" type=\"text/css\" rel=\"stylesheet\"/>
 \t\t";
     }
 
-    // line 12
+    // line 20
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 13
+        // line 21
         echo "\t\t\t <script type=\"text/javascript\" src=\"http://";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request"), "getHost", array(), "method"), "html", null, true);
         echo "/assets/js/jquery-1.4.4.min.js\"></script>
 \t\t\t<script type=\"text/javascript\" src=\"";
-        // line 14
+        // line 22
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/pagesale/ckeditor/ckeditor.js"), "html", null, true);
         echo "\"></script>
+\t\t\t<script type=\"text/javascript\" src=\"http://";
+        // line 23
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request"), "getHost", array(), "method"), "html", null, true);
+        echo "/assets/js/common.js\"></script>
+\t\t\t<script type=\"text/javascript\" src=\"http://";
+        // line 24
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request"), "getHost", array(), "method"), "html", null, true);
+        echo "/assets/js/jquery_notification_v.1.js\"></script>
 \t\t";
     }
 
-    // line 27
+    // line 46
     public function block_body($context, array $blocks = array())
     {
-        // line 28
+        // line 47
         echo "\t\t\t
 \t\t\t";
     }
@@ -123,6 +167,6 @@ class __TwigTemplate_1fca1e86ce44cb5b6a89c78fd25383ef52e2f648054dff2ff12d800130a
 
     public function getDebugInfo()
     {
-        return array (  110 => 28,  107 => 27,  101 => 14,  96 => 13,  93 => 12,  86 => 7,  83 => 6,  77 => 5,  62 => 30,  60 => 27,  56 => 25,  54 => 24,  44 => 16,  42 => 12,  33 => 6,  23 => 1,  38 => 5,  35 => 9,  29 => 5,);
+        return array (  154 => 47,  151 => 46,  145 => 24,  141 => 23,  137 => 22,  132 => 21,  129 => 20,  123 => 9,  119 => 8,  114 => 7,  111 => 6,  105 => 5,  94 => 53,  92 => 52,  87 => 49,  85 => 46,  81 => 44,  79 => 43,  74 => 40,  69 => 38,  63 => 36,  61 => 35,  50 => 26,  48 => 20,  35 => 11,  33 => 6,  29 => 5,  23 => 1,);
     }
 }

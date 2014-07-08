@@ -1,6 +1,24 @@
-_selection:
+_admin:
     pattern:  /admin
     defaults: { _controller: PageSaleBundle:Admin:index }
-_ckediter:
-    pattern:  /bundles/pagesale/ckfinder/ckfinder/
-    #defaults: { _controller: AcmeFrancketFilsBundle:Admin:rendezvousdelete }
+_admin_login:
+    pattern:  /admin/login
+    defaults: { _controller: PageSaleBundle:Admin:login }
+_admin_logout:
+    pattern:  /admin/logout
+    defaults: { _controller: PageSaleBundle:Admin:logout }
+_categogy:
+    pattern:  /categogy
+    defaults: { _controller: PageSaleBundle:Categogy:index }
+_categogy_add:
+    pattern:  /categogy/add
+    defaults: { _controller: PageSaleBundle:Categogy:add }
+_categogy_list:
+    pattern:  /categogy/listcategogy
+    defaults: { _controller: PageSaleBundle:Categogy:listcategogy }
+_categogy_delete:
+    pattern:  /categogy/delete
+    defaults: { _controller: PageSaleBundle:Categogy:delete }
+_categogy_edit:
+    pattern:  /categogy/edit/{id}
+    defaults: { _controller: PageSaleBundle:Categogy:edit }

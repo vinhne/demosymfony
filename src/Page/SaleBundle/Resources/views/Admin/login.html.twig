@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Đăng nhập hệ thống..{% endblock %}</title>
+        {% block stylesheets %}
+			<link media="all" href="http://{{ app.request.getHost() }}/assets/css/style.css" type="text/css" rel="stylesheet" />
+		{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+		
+		
+		{% block javascripts %}
+			 <script type="text/javascript" src="http://{{ app.request.getHost() }}/assets/js/jquery-1.4.4.min.js"></script>
+			<script type="text/javascript" src="{{ asset('bundles/pagesale/ckeditor/ckeditor.js') }}"></script>
+		{% endblock %}
+		
+    </head>
+    <body>
+	<div class="page">
+		<div class="top_login">Đăng nhập hệ thống</div>
+		<div class="frm_login">
+			{{ form(form) }}
+			
+		</div>
+		<div class="footer">
+			{% include'PageSaleBundle:Components:footer.twig.html'%}
+		</div>
+	</div>
+	
+        
+        
+    </body>
+</html>

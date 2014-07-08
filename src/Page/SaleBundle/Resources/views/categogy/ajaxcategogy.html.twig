@@ -1,0 +1,40 @@
+ <table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Tên danh mục</th>
+						<th>Thứ thự</th>
+						<th>Trạng thái</th>
+						<th>Chức năng</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% if Categorys %}
+						{% for Category in Categorys %}
+							<tr class="row{{ Category.id() }}">
+								<td>{{ Category.name() }} </td>
+								<td>{{ Category.orderS() }}</td>
+								<td>{% if(Category.status()==0) %} Hiện {% else %} Ẩn {% endif %} </td>
+								<td>
+								<a href="{{ app.request.baseUrl }}/categogy/edit/{{ Category.id() }}" class="btn btn-inverse">sửa</a>
+								&nbsp;
+								
+								
+								<a href="javascript:void(0);" onclick="deletecategogy({{ Category.id() }});" >Xóa</a></td>
+							</tr>
+						{% endfor %}
+					{% else %}
+					<tr><td colspan="4">No Record</td></tr>
+					{% endif %}
+				</tbody>
+</table>
+
+<div class="phantrang">
+	<ul>
+	{% for i in 0..count %}
+		<li><a  href="javascript:void(0);" onclick="listcategogy({{i}})">{{i+1}}</a> </li>
+	{% endfor %}
+	</ul>
+</div>
+
+
+
